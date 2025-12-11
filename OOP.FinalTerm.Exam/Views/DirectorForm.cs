@@ -47,33 +47,34 @@ namespace OOP.FinalTerm.Exam.Views
         {
             // TODO: Map form controls to _director properties
             // Example:
-            // _director.FirstName = txtFirstName.Text;
-            // _director.LastName = txtLastName.Text;
-            // _director.Genres = txtGenres.Text;
-            // _director.TotalMoviesCreated = (int)numTotalMovies.Value;
+            _director.FirstName = txtFirstName.Text;
+            _director.LastName = txtLastName.Text;
+            _director.Genres = txtGenres.Text;
+            _director.TotalMoviesCreated = (int)numTotalMovies.Value;
+
 
             return _director;
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            // TODO: Students will implement validation here
+           
             // Example validation:
-            // if (string.IsNullOrWhiteSpace(txtFirstName.Text))
-            // {
-            //     MessageBox.Show("First Name is required.", "Validation Error", 
-            //         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //     txtFirstName.Focus();
-            //     return;
-            // }
-            //
-            // if (string.IsNullOrWhiteSpace(txtLastName.Text))
-            // {
-            //     MessageBox.Show("Last Name is required.", "Validation Error", 
-            //         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //     txtLastName.Focus();
-            //     return;
-            // }
+            if (string.IsNullOrWhiteSpace(txtFirstName.Text))
+            {
+                MessageBox.Show("First Name is required.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtFirstName.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtLastName.Text))
+            {
+                MessageBox.Show("Last Name is required.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtLastName.Focus();
+                return;
+            }
 
             _directorRepository.AddDirector(GetDirector());
 
@@ -155,5 +156,10 @@ namespace OOP.FinalTerm.Exam.Views
             }
         }
         #endregion
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
